@@ -5,7 +5,10 @@ QT += qml quick
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    triangle.cpp
+    triangle.cpp \
+    cpuinfobase.cpp \
+    linuxcpuinfo.cpp \
+    cpuvalues.cpp
 
 RESOURCES += qml.qrc
 
@@ -32,4 +35,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    triangle.h
+    triangle.h \
+    cpuinfobase.h \
+    linuxcpuinfo.h \
+    cpuvalues.h \
+    mynamespace.h

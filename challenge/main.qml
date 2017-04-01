@@ -7,7 +7,7 @@ ApplicationWindow {
     width: 640
     height: 480
     title: qsTr("Challenge")
-
+    /*
     menuBar: MenuBar {
         Menu {
             title: qsTr("File")
@@ -21,7 +21,7 @@ ApplicationWindow {
             }
         }
     }
-
+    */
     MyTriangle {
         Label {
             text: qsTr("Hello World")
