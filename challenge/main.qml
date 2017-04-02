@@ -7,6 +7,14 @@ ApplicationWindow {
     width: 640
     height: 480
     title: qsTr("Challenge")
+    Component.onCompleted: {
+        console.log("NUMBER OF PROCESSORS: " + _myCpuInfo.numberOfProcessors());
+    }
+    ProcessorItem {
+        anchors.fill: parent
+        processorId: 0
+    }
+
     /*
     menuBar: MenuBar {
         Menu {
@@ -22,6 +30,7 @@ ApplicationWindow {
         }
     }
     */
+    /*
     MyTriangle {
         Label {
             text: qsTr("Hello World")
@@ -30,4 +39,20 @@ ApplicationWindow {
         //color: "green"
         anchors.fill: parent
     }
+    */
+    /*
+    TableView {
+        anchors.fill: parent
+        model: infoModel.model
+    }
+
+    MyCpuInfoModel {
+        id: infoModel
+        cpuInfo: _myCpuInfo
+        MyCpuInfoModelItem {
+            type: MyNamespace.CPU_FAMILY
+        }
+    }
+    */
+
 }

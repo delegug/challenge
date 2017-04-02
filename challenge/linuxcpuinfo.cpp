@@ -1,5 +1,5 @@
 /// @file linuxcpuinfo.cpp
-/// @brief Controls the access to the cpuInfo
+/// @brief Controls the access to the cpuInfo of a linux machine
 /// @author M. Gugenhan
 
 #include "linuxcpuinfo.h"
@@ -51,7 +51,7 @@ void linuxCpuInfo::initializeTypeMap() {
     m_cpuTypeInfos.append(createTypeInfo(myNamespace::PHYSICAL_ID,QT_TR_NOOP("Physical id"),"physical id"));
     m_cpuTypeInfos.append(createTypeInfo(myNamespace::SIBLINGS,QT_TR_NOOP("Siblings"),"siblings"));
     m_cpuTypeInfos.append(createTypeInfo(myNamespace::CORE_ID,QT_TR_NOOP("Core Id"),"core id"));
-    m_cpuTypeInfos.append(createTypeInfo(myNamespace::CPU_CORES,QT_TR_NOOP("cpu cores"),"Cpu cores"));
+    m_cpuTypeInfos.append(createTypeInfo(myNamespace::CPU_CORES,QT_TR_NOOP("Cpu cores"),"cpu cores"));
     m_cpuTypeInfos.append(createTypeInfo(myNamespace::APICID,QT_TR_NOOP("Apicid"),"apicid"));
     m_cpuTypeInfos.append(createTypeInfo(myNamespace::INIT_APICID,QT_TR_NOOP("Initial apicid"),"initial apicid"));
     m_cpuTypeInfos.append(createTypeInfo(myNamespace::FPU,QT_TR_NOOP("Fpu"),"fpu"));
@@ -84,7 +84,7 @@ linuxCpuInfo::typeInfo *linuxCpuInfo::createTypeInfo(myNamespace::CPUINFOTYPE ty
 /// @return returns true on success
 bool linuxCpuInfo::initialize()
 {
-    readInfoFile();
+    return readInfoFile();
 }
 
 /// Reading the Linux-Cpu-Information file
@@ -92,7 +92,8 @@ bool linuxCpuInfo::initialize()
 bool linuxCpuInfo::readInfoFile() {
     QFile f(INFO_FILEPATH);
     if (!f.open(QIODevice::ReadOnly| QIODevice::Text)) {
-        //TODO WRITE ERROR LOGFILE
+        //TODO write error in logfile
+        qCritical("File '%s' does not exist!",INFO_FILEPATH);
         setTrErrorText(tr("Error initialize the application. Cannot open file '%1'!").arg(INFO_FILEPATH));
         return false;
     }
@@ -147,3 +148,33 @@ myNamespace::CPUINFOTYPE linuxCpuInfo::getInfoTypeForString(const QString& typeT
     return myNamespace::NO_TYPE;
 }
 
+/// @return function retuns the number of processors
+short linuxCpuInfo::numberOfProcessors()
+{
+    return m_cpuValues.size();
+}
+
+/// @param procIndex index of the processor
+/// @param type Cpu-Information-Type
+/// @return function returns the value for a specific cpu-infotype for each processor
+/// the function returns an empty variant if no value is found
+QVariant linuxCpuInfo::getValue(unsigned short procIndex, myNamespace::CPUINFOTYPE type)
+{
+    if (procIndex<m_cpuValues.size()) {
+        return m_cpuValues.at(procIndex)->getValue(type);
+    } else {
+        //TODO write error in logfile
+        qCritical("Error linuxCpuInfo::getValue! Procindex is out of range!");
+    }
+    return QVariant();
+}
+
+/// @returns returns the translated text of a cpu type information
+/// if no text is found, an empty string will be returned
+QString linuxCpuInfo::getTranslatedText(myNamespace::CPUINFOTYPE type)
+{
+    foreach (typeInfo* info,m_cpuTypeInfos) {
+        if (info->type==type) return QCoreApplication::translate(metaObject()->className(),info->sourceText);
+    }
+    return QString();
+}

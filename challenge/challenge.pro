@@ -1,6 +1,6 @@
 TEMPLATE = app
 
-QT += qml quick
+QT += qml quick widgets
 
 CONFIG += c++11
 
@@ -8,7 +8,8 @@ SOURCES += main.cpp \
     triangle.cpp \
     cpuinfobase.cpp \
     linuxcpuinfo.cpp \
-    cpuvalues.cpp
+    cpuvalues.cpp \
+    cpuinfomodel.cpp
 
 RESOURCES += qml.qrc
 
@@ -39,4 +40,5 @@ HEADERS += \
     cpuinfobase.h \
     linuxcpuinfo.h \
     cpuvalues.h \
-    mynamespace.h
+    mynamespace.h \
+    cpuinfomodel.h

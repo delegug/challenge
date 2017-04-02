@@ -18,6 +18,12 @@ QString cpuInfoBase::trErrorText() const
     return m_trErrorText;
 }
 
+/// Help-Overloaded-Function for Qml-Call
+QVariant cpuInfoBase::getValue(unsigned short procIndex, int type)
+{
+    return getValue(procIndex,static_cast<myNamespace::CPUINFOTYPE>(type));
+}
+
 /// @return Returns the translated errortext of the last called faulty function
 void cpuInfoBase::setTrErrorText(const QString &trErrorText)
 {

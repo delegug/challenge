@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>ProcessorItem.qml</file>
+        <file>ProcessorModel.qml</file>
     </qresource>
 </RCC>
