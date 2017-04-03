@@ -59,6 +59,7 @@ void qmlCpuInfoItem::setTextColor(QColor textColor)
 cpuInfoModel::cpuInfoModel(QObject *parent) : QAbstractListModel(parent)
 {
     m_cpuInfo=NULL;
+    m_processorId=-1;
 }
 
 /// @return returns the cpuInfo-data
@@ -74,13 +75,6 @@ void cpuInfoModel::addInfoItem(qmlCpuInfoItem *item)
     beginInsertRows(QModelIndex(), rowCount(), rowCount());
     m_qmlCpuInfoItems.append(item);
     endInsertRows();
-    //QObject::metaObject()->invokeMethod(this,"setCount",Qt::QueuedConnection,Q_ARG(int,m_qmlCpuInfoItems.size()));
-}
-
-/// Count of the model, same value as rowCount
-int cpuInfoModel::count() const
-{
-    return m_count;
 }
 
 /// Returns the rolenames for the model
@@ -94,16 +88,25 @@ QHash<int, QByteArray> cpuInfoModel::roleNames() const
     return roles;
 }
 
-/// Set the Count for the Model
-/// Property is needed by the QmlListView
-void cpuInfoModel::setCount(int count)
+/// @return processorId of the model
+/// the model will return the data of the selected core
+short cpuInfoModel::processorId() const
 {
-    if (m_count == count)
-        return;
-
-    m_count = count;
-    emit countChanged(count);
+    return m_processorId;
 }
+
+/// Sets the coreId to the model
+/// the model will return the data of the selected core
+/// if processorId is <0 no data will be shown
+void cpuInfoModel::setProcessorId(short processorId)
+{
+    if (m_processorId == processorId)
+        return;
+    beginResetModel();
+    m_processorId = processorId;
+    endResetModel();
+}
+
 
 /// Function set the cpuInfo-data to the model
 /// @warning this function has to called at least once in order for a working model
@@ -131,13 +134,16 @@ QVariant cpuInfoModel::data(const QModelIndex &index, int role) const
             qWarning()<<"Warning cpuInfoModel::data! Cpuinfo is NULL!";
             return QVariant();
         }
+        if (m_processorId<0&&m_processorId<m_cpuInfo->numberOfProcessors()) {
+            return QVariant();
+        }
         if (index.row()<0 || index.row()>m_qmlCpuInfoItems.size()) {
             qWarning()<<"Warning cpuInfoModel::data! Rowcount is out of range!";
             return QVariant();
         }
         qmlCpuInfoItem* item=m_qmlCpuInfoItems[index.row()];
         if (role == ValueRole) {
-            return m_cpuInfo->getValue(0,item->type());
+            return m_cpuInfo->getValue(m_processorId,item->type());
         } else if (role == ColorRole) {
             return item->textColor();
         } else if (role==TranslatedText) {
@@ -160,7 +166,7 @@ qmlCpuInfoModelContainer::qmlCpuInfoModelContainer(QQuickItem *parent) :
 }
 
 /// Returns the cpuInfo-data of the model
-cpuInfoBase* qmlCpuInfoModelContainer::cpuInfo() const
+QObject* qmlCpuInfoModelContainer::cpuInfo() const
 {
     cpuInfoModel* infoModel=qobject_cast<cpuInfoModel*>(m_model);
     return infoModel ? infoModel->cpuInfo() : NULL;
@@ -174,10 +180,10 @@ QObject *qmlCpuInfoModelContainer::model() const
 
 /// Function set the cpuInfo-data to the model
 /// @warning this function has to called at least once in order for a working model
-void qmlCpuInfoModelContainer::setCpuInfo(cpuInfoBase *cpuInfo)
+void qmlCpuInfoModelContainer::setCpuInfo(QObject *cpuInfo)
 {
     cpuInfoModel* infoModel=qobject_cast<cpuInfoModel*>(m_model);
-    if (infoModel) infoModel->setCpuInfo(cpuInfo);
+    if (infoModel) infoModel->setCpuInfo(qobject_cast<cpuInfoBase*>(cpuInfo));
     else qWarning()<<"Warning qmlCpuInfoModelContainer::setCpuInfo! cpuInfoModel is NULL!";
 }
 
@@ -195,6 +201,21 @@ void qmlCpuInfoModelContainer::setModel(QObject *model)
 void qmlCpuInfoModelContainer::componentComplete()
 {
     readChilds();
+}
+
+/// Sets coreId of the shown data to the Model
+void qmlCpuInfoModelContainer::setProcessorId(short arg)
+{
+    cpuInfoModel* infoModel=qobject_cast<cpuInfoModel*>(m_model);
+    if (infoModel) infoModel->setProcessorId(arg);
+    else qWarning()<<"Warning qmlCpuInfoModelContainer::setCpuCoreId! cpuInfoModel is NULL!";
+}
+
+/// Returns the core Id of the shown data
+short qmlCpuInfoModelContainer::processorId() const
+{
+    cpuInfoModel* infoModel=qobject_cast<cpuInfoModel*>(m_model);
+    return infoModel ? infoModel->processorId() : -1;
 }
 
 /// Childs of the container will be read and added to the tableModel

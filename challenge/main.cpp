@@ -1,6 +1,5 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "triangle.h"
 #include <QQmlContext>
 #include "linuxcpuinfo.h"
 #include <QMessageBox>
@@ -10,8 +9,14 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
+    //Install Translator for Locale Language
+    QTranslator translator;
+    if (translator.load(QLocale(), QLatin1String("challenge"), QLatin1String("_"),
+                        QString(QDir::currentPath() + QDir::separator() + "translations"))) {
+        app.installTranslator(&translator);
+    }
+
     //Register Custom QML-Types
-    qmlRegisterType<Triangle>("ChallengeLib",1,0,"MyTriangle");
     qmlRegisterType<qmlCpuInfoItem>("ChallengeLib",1,0,"MyCpuInfoModelItem");
     qmlRegisterType<qmlCpuInfoModelContainer>("ChallengeLib",1,0,"MyCpuInfoModel");
     qmlRegisterUncreatableType<myNamespace>("ChallengeLib",1,0,"MyNamespace","Contains the enum values of the program");

@@ -3,5 +3,7 @@
         <file>main.qml</file>
         <file>ProcessorItem.qml</file>
         <file>ProcessorModel.qml</file>
+        <file>ProcessorSelector.qml</file>
+        <file>MyText.qml</file>
     </qresource>
 </RCC>

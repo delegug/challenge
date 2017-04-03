@@ -4,8 +4,9 @@ QT += qml quick widgets
 
 CONFIG += c++11
 
+VERSION = 1.0.0
+
 SOURCES += main.cpp \
-    triangle.cpp \
     cpuinfobase.cpp \
     linuxcpuinfo.cpp \
     cpuvalues.cpp \
@@ -25,6 +26,9 @@ QML_DESIGNER_IMPORT_PATH =
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
+TRANSLATIONS = challenge_de.ts \
+               challenge_en.ts
+
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
@@ -36,7 +40,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    triangle.h \
     cpuinfobase.h \
     linuxcpuinfo.h \
     cpuvalues.h \

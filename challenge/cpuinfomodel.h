@@ -42,7 +42,6 @@ class cpuInfoModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(cpuInfoBase* cpuInfo READ cpuInfo WRITE setCpuInfo)
-    Q_PROPERTY(int count READ count WRITE setCount NOTIFY countChanged)
 
 public:
     /// @enum CpuInfoModelRoles
@@ -57,20 +56,20 @@ public:
     virtual QVariant data(const QModelIndex &index, int role) const;
     cpuInfoBase* cpuInfo() const;
     void addInfoItem(qmlCpuInfoItem* item);
-    int count() const;
     virtual QHash<int,QByteArray> roleNames() const;
+    short processorId() const;
+    void setProcessorId(short processorId);
 
 public slots:
     void setCpuInfo(cpuInfoBase* cpuInfo);
-    void setCount(int count);
 
 signals:
-    void countChanged(int count);
 
 private:
     QList<qmlCpuInfoItem*> m_qmlCpuInfoItems;
     cpuInfoBase* m_cpuInfo;
     int m_count;
+    short m_processorId;
 };
 
 
@@ -80,26 +79,30 @@ private:
 /// Is a Qml-Container-Class which contains the qmlCpuInfoItem as Qml-Childs
 /// the qmlCpuInfoItem presents a row in the tableview
 /// the class also contains the real 'TableModel' in the QProperty 'model' and
-/// the model will be filled with qmlCpuInfoItems here
+/// the model will be filled with qmlCpuInfoItems
 class qmlCpuInfoModelContainer : public QQuickItem
 {
-    Q_PROPERTY(cpuInfoBase* cpuInfo READ cpuInfo WRITE setCpuInfo)
+    Q_PROPERTY(QObject* cpuInfo READ cpuInfo WRITE setCpuInfo)
     Q_PROPERTY(QObject* model READ model WRITE setModel NOTIFY modelChanged)
+    Q_PROPERTY(short processorId READ processorId WRITE setProcessorId)
     Q_OBJECT
 
 public:
     qmlCpuInfoModelContainer(QQuickItem *parent = 0);
-    cpuInfoBase* cpuInfo() const;
+    QObject* cpuInfo() const;
     QObject* model() const;
     virtual void componentComplete();
+    short processorId() const;
 
 public slots:
-    void setCpuInfo(cpuInfoBase* cpuInfo);
+    void setCpuInfo(QObject *cpuInfo);
     void setModel(QObject* model);
+    void setProcessorId(short arg);
 
 signals:
-    void cpuInfoChanged(cpuInfoBase* cpuInfo);
+    void cpuInfoChanged(QObject* cpuInfo);
     void modelChanged(QObject* model);
+    void cpuCoreIdChanged(short arg);
 
 private:
     QObject* m_model;

@@ -8,13 +8,8 @@ ApplicationWindow {
     height: 480
     title: qsTr("Challenge")
     Component.onCompleted: {
-        console.log("NUMBER OF PROCESSORS: " + _myCpuInfo.numberOfProcessors());
+        selector.forceActiveFocus();
     }
-    ProcessorItem {
-        anchors.fill: parent
-        processorId: 0
-    }
-
     /*
     menuBar: MenuBar {
         Menu {
@@ -30,29 +25,23 @@ ApplicationWindow {
         }
     }
     */
-    /*
-    MyTriangle {
-        Label {
-            text: qsTr("Hello World")
-            anchors.centerIn: parent
-        }
-        //color: "green"
-        anchors.fill: parent
-    }
-    */
-    /*
-    TableView {
-        anchors.fill: parent
-        model: infoModel.model
-    }
 
-    MyCpuInfoModel {
-        id: infoModel
-        cpuInfo: _myCpuInfo
-        MyCpuInfoModelItem {
-            type: MyNamespace.CPU_FAMILY
-        }
+    /// Selects the processor for data visualitation
+    ProcessorSelector {
+        id: selector
+        anchors.left: parent.left
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        width: 150
     }
-    */
-
+    /// Shows the data of the selcted processor item
+    ProcessorItem {
+        id: coreInfoItem
+        //Reference to the current selected id in the ProcessorSelector
+        processorId: selector.currentProcessorId
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.left: selector.right
+        anchors.right: parent.right
+    }
 }
