@@ -92,7 +92,6 @@ bool linuxCpuInfo::initialize()
 bool linuxCpuInfo::readInfoFile() {
     QFile f(INFO_FILEPATH);
     if (!f.open(QIODevice::ReadOnly| QIODevice::Text)) {
-        //TODO write error in logfile
         qCritical("File '%s' does not exist!",INFO_FILEPATH);
         setTrErrorText(tr("Error initialize the application. Cannot open file '%1'!").arg(INFO_FILEPATH));
         return false;
@@ -163,7 +162,6 @@ QVariant linuxCpuInfo::getValue(unsigned short procIndex, myNamespace::CPUINFOTY
     if (procIndex<m_cpuValues.size()) {
         return m_cpuValues.at(procIndex)->getValue(type);
     } else {
-        //TODO write error in logfile
         qCritical("Error linuxCpuInfo::getValue! Procindex is out of range!");
     }
     return QVariant();

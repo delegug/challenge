@@ -10,7 +10,8 @@ SOURCES += main.cpp \
     cpuinfobase.cpp \
     linuxcpuinfo.cpp \
     cpuvalues.cpp \
-    cpuinfomodel.cpp
+    cpuinfomodel.cpp \
+    logfile.cpp
 
 RESOURCES += qml.qrc
 
@@ -44,4 +45,5 @@ HEADERS += \
     linuxcpuinfo.h \
     cpuvalues.h \
     mynamespace.h \
-    cpuinfomodel.h
+    cpuinfomodel.h \
+    logfile.h
