@@ -1,0 +1,12 @@
+Challenge shows the data of the /proc/cpuinfo-file of a linux system.
+
+The program shows the selection of processors on the left side and the visualization of the data of the selected processor on the right side.
+
+The processors can be selected with the keys up,down,tab and back-tab and with the mouse.
+
+Supported Languages are German and English. The program language will be the system language.
+
+
+Execution:
+
+Execute the 'challenge'-file in this folder. Be sure that the qt-5.8.0-GCC_64 library is installed on the system. The program searches the QT-Library-Files in /usr/lib/x86_64-linux-gnu/.

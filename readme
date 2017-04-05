@@ -1,0 +1,20 @@
+./challenge 
+
+Source-Folder, sources are compiled with Qt5.8.0/GCC_64 and created with QtCreator 4.2.1
+	
+
+./bin
+
+Executable of the program
+
+
+./doc
+
+doc.qch-File for help-support in qtCreator
+
+
+./doc/html/index.html
+
+Source-Code-Documentation generated with doxygen
+
+

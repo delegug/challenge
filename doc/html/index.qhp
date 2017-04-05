@@ -1,0 +1,179 @@
+<QtHelpProject version="1.0">
+  <namespace>org.emag.frameworkHelp</namespace>
+  <virtualFolder>doc</virtualFolder>
+  <customFilter name="Emag Framework">
+  </customFilter>
+  <filterSection>
+    <filterAttribute>doxygen</filterAttribute>
+    <toc>
+      <section title="Challenge 1.0.0" ref="index.html">
+        <section title="C++ Part" ref="df/daa/cpp.html" />
+        <section title="Qml Part" ref="d3/da9/qml.html" />
+        <section title="Class List" ref="annotated.html">
+          <section title="cpuInfoBase" ref="d1/d7f/classcpu_info_base.html" />
+          <section title="cpuInfoModel" ref="d0/d84/classcpu_info_model.html" />
+          <section title="cpuValues" ref="df/dbb/classcpu_values.html" />
+          <section title="linuxCpuInfo" ref="d2/d1b/classlinux_cpu_info.html" />
+          <section title="logfile" ref="d7/dd0/classlogfile.html" />
+          <section title="myNamespace" ref="da/db0/classmy_namespace.html" />
+          <section title="qmlCpuInfoItem" ref="dd/d73/classqml_cpu_info_item.html" />
+          <section title="qmlCpuInfoModelContainer" ref="d3/d18/classqml_cpu_info_model_container.html" />
+        </section>
+        <section title="Class Hierarchy" ref="hierarchy.html">
+          <section title="cpuInfoBase" ref="d1/d7f/classcpu_info_base.html">
+            <section title="linuxCpuInfo" ref="d2/d1b/classlinux_cpu_info.html" />
+          </section>
+          <section title="cpuInfoModel" ref="d0/d84/classcpu_info_model.html" />
+          <section title="cpuValues" ref="df/dbb/classcpu_values.html" />
+          <section title="logfile" ref="d7/dd0/classlogfile.html" />
+          <section title="myNamespace" ref="da/db0/classmy_namespace.html" />
+          <section title="qmlCpuInfoItem" ref="dd/d73/classqml_cpu_info_item.html" />
+          <section title="qmlCpuInfoModelContainer" ref="d3/d18/classqml_cpu_info_model_container.html" />
+        </section>
+        <section title="Class Members" ref="functions.html" />
+        <section title="Examples" ref="examples.html">
+          <section title="d:/TEMP/test/challenge/cpuinfomodel.h" ref="d3/d1b/d_1_2_t_e_m_p_2test_2challenge_2cpuinfomodel.h-example.html" />
+        </section>
+      </section>
+    </toc>
+    <keywords>
+      <keyword name="C++ Part" id="C++ Part" ref="df/daa/cpp.html" />
+      <keyword name="Qml Part" id="Qml Part" ref="d3/da9/qml.html" />
+      <keyword name="cpuInfoBase" id="cpuInfoBase" ref="d1/d7f/classcpu_info_base.html" />
+      <keyword name="numberOfProcessors" id="cpuInfoBase::numberOfProcessors" ref="d1/d7f/classcpu_info_base.html" />
+      <keyword name="getValue" id="cpuInfoBase::getValue" ref="d1/d7f/classcpu_info_base.html" />
+      <keyword name="cpuInfoBase" id="cpuInfoBase::cpuInfoBase" ref="d1/d7f/classcpu_info_base.html" />
+      <keyword name="initialize" id="cpuInfoBase::initialize" ref="d1/d7f/classcpu_info_base.html" />
+      <keyword name="getValue" id="cpuInfoBase::getValue" ref="d1/d7f/classcpu_info_base.html" />
+      <keyword name="getTranslatedText" id="cpuInfoBase::getTranslatedText" ref="d1/d7f/classcpu_info_base.html" />
+      <keyword name="trErrorText" id="cpuInfoBase::trErrorText" ref="d1/d7f/classcpu_info_base.html" />
+      <keyword name="setTrErrorText" id="cpuInfoBase::setTrErrorText" ref="d1/d7f/classcpu_info_base.html" />
+      <keyword name="cpuInfoModel" id="cpuInfoModel" ref="d0/d84/classcpu_info_model.html" />
+      <keyword name="setCpuInfo" id="cpuInfoModel::setCpuInfo" ref="d0/d84/classcpu_info_model.html" />
+      <keyword name="cpuInfoModel" id="cpuInfoModel::cpuInfoModel" ref="d0/d84/classcpu_info_model.html" />
+      <keyword name="rowCount" id="cpuInfoModel::rowCount" ref="d0/d84/classcpu_info_model.html" />
+      <keyword name="data" id="cpuInfoModel::data" ref="d0/d84/classcpu_info_model.html" />
+      <keyword name="cpuInfo" id="cpuInfoModel::cpuInfo" ref="d0/d84/classcpu_info_model.html" />
+      <keyword name="addInfoItem" id="cpuInfoModel::addInfoItem" ref="d0/d84/classcpu_info_model.html" />
+      <keyword name="roleNames" id="cpuInfoModel::roleNames" ref="d0/d84/classcpu_info_model.html" />
+      <keyword name="processorId" id="cpuInfoModel::processorId" ref="d0/d84/classcpu_info_model.html" />
+      <keyword name="setProcessorId" id="cpuInfoModel::setProcessorId" ref="d0/d84/classcpu_info_model.html" />
+      <keyword name="cpuInfo" id="cpuInfoModel::cpuInfo" ref="d0/d84/classcpu_info_model.html" />
+      <keyword name="ValueRole" id="cpuInfoModel::ValueRole" ref="d0/d84/classcpu_info_model.html" />
+      <keyword name="ColorRole" id="cpuInfoModel::ColorRole" ref="d0/d84/classcpu_info_model.html" />
+      <keyword name="TranslatedText" id="cpuInfoModel::TranslatedText" ref="d0/d84/classcpu_info_model.html" />
+      <keyword name="cpuValues" id="cpuValues" ref="df/dbb/classcpu_values.html" />
+      <keyword name="cpuValues" id="cpuValues::cpuValues" ref="df/dbb/classcpu_values.html" />
+      <keyword name="addValue" id="cpuValues::addValue" ref="df/dbb/classcpu_values.html" />
+      <keyword name="getValue" id="cpuValues::getValue" ref="df/dbb/classcpu_values.html" />
+      <keyword name="isEmpty" id="cpuValues::isEmpty" ref="df/dbb/classcpu_values.html" />
+      <keyword name="linuxCpuInfo" id="linuxCpuInfo" ref="d2/d1b/classlinux_cpu_info.html" />
+      <keyword name="numberOfProcessors" id="linuxCpuInfo::numberOfProcessors" ref="d2/d1b/classlinux_cpu_info.html" />
+      <keyword name="linuxCpuInfo" id="linuxCpuInfo::linuxCpuInfo" ref="d2/d1b/classlinux_cpu_info.html" />
+      <keyword name="~linuxCpuInfo" id="linuxCpuInfo::~linuxCpuInfo" ref="d2/d1b/classlinux_cpu_info.html" />
+      <keyword name="initialize" id="linuxCpuInfo::initialize" ref="d2/d1b/classlinux_cpu_info.html" />
+      <keyword name="getValue" id="linuxCpuInfo::getValue" ref="d2/d1b/classlinux_cpu_info.html" />
+      <keyword name="getTranslatedText" id="linuxCpuInfo::getTranslatedText" ref="d2/d1b/classlinux_cpu_info.html" />
+      <keyword name="logfile" id="logfile" ref="d7/dd0/classlogfile.html" />
+      <keyword name="logfile" id="logfile::logfile" ref="d7/dd0/classlogfile.html" />
+      <keyword name="writeLogFile" id="logfile::writeLogFile" ref="d7/dd0/classlogfile.html" />
+      <keyword name="myNamespace" id="myNamespace" ref="da/db0/classmy_namespace.html" />
+      <keyword name="NO_TYPE" id="myNamespace::NO_TYPE" ref="da/db0/classmy_namespace.html" />
+      <keyword name="PROCESSOR" id="myNamespace::PROCESSOR" ref="da/db0/classmy_namespace.html" />
+      <keyword name="VENDOR_ID" id="myNamespace::VENDOR_ID" ref="da/db0/classmy_namespace.html" />
+      <keyword name="CPU_FAMILY" id="myNamespace::CPU_FAMILY" ref="da/db0/classmy_namespace.html" />
+      <keyword name="MODEL" id="myNamespace::MODEL" ref="da/db0/classmy_namespace.html" />
+      <keyword name="MODEL_NAME" id="myNamespace::MODEL_NAME" ref="da/db0/classmy_namespace.html" />
+      <keyword name="STEPPING" id="myNamespace::STEPPING" ref="da/db0/classmy_namespace.html" />
+      <keyword name="MIRCOCODE" id="myNamespace::MIRCOCODE" ref="da/db0/classmy_namespace.html" />
+      <keyword name="CPUMHZ" id="myNamespace::CPUMHZ" ref="da/db0/classmy_namespace.html" />
+      <keyword name="CACHESIZE" id="myNamespace::CACHESIZE" ref="da/db0/classmy_namespace.html" />
+      <keyword name="PHYSICAL_ID" id="myNamespace::PHYSICAL_ID" ref="da/db0/classmy_namespace.html" />
+      <keyword name="SIBLINGS" id="myNamespace::SIBLINGS" ref="da/db0/classmy_namespace.html" />
+      <keyword name="CORE_ID" id="myNamespace::CORE_ID" ref="da/db0/classmy_namespace.html" />
+      <keyword name="CPU_CORES" id="myNamespace::CPU_CORES" ref="da/db0/classmy_namespace.html" />
+      <keyword name="APICID" id="myNamespace::APICID" ref="da/db0/classmy_namespace.html" />
+      <keyword name="INIT_APICID" id="myNamespace::INIT_APICID" ref="da/db0/classmy_namespace.html" />
+      <keyword name="FPU" id="myNamespace::FPU" ref="da/db0/classmy_namespace.html" />
+      <keyword name="FPU_EXEPTION" id="myNamespace::FPU_EXEPTION" ref="da/db0/classmy_namespace.html" />
+      <keyword name="CPUID_LEVEL" id="myNamespace::CPUID_LEVEL" ref="da/db0/classmy_namespace.html" />
+      <keyword name="WP" id="myNamespace::WP" ref="da/db0/classmy_namespace.html" />
+      <keyword name="FLAGS" id="myNamespace::FLAGS" ref="da/db0/classmy_namespace.html" />
+      <keyword name="BUGS" id="myNamespace::BUGS" ref="da/db0/classmy_namespace.html" />
+      <keyword name="BOGOMIPS" id="myNamespace::BOGOMIPS" ref="da/db0/classmy_namespace.html" />
+      <keyword name="CLFLUSH_SIZE" id="myNamespace::CLFLUSH_SIZE" ref="da/db0/classmy_namespace.html" />
+      <keyword name="CACHE_ALIGNMENT" id="myNamespace::CACHE_ALIGNMENT" ref="da/db0/classmy_namespace.html" />
+      <keyword name="ADDRESS_SIZE" id="myNamespace::ADDRESS_SIZE" ref="da/db0/classmy_namespace.html" />
+      <keyword name="POWER_MANAGEMENT" id="myNamespace::POWER_MANAGEMENT" ref="da/db0/classmy_namespace.html" />
+      <keyword name="qmlCpuInfoItem" id="qmlCpuInfoItem" ref="dd/d73/classqml_cpu_info_item.html" />
+      <keyword name="setType" id="qmlCpuInfoItem::setType" ref="dd/d73/classqml_cpu_info_item.html" />
+      <keyword name="setTextColor" id="qmlCpuInfoItem::setTextColor" ref="dd/d73/classqml_cpu_info_item.html" />
+      <keyword name="typeChanged" id="qmlCpuInfoItem::typeChanged" ref="dd/d73/classqml_cpu_info_item.html" />
+      <keyword name="textColorChanged" id="qmlCpuInfoItem::textColorChanged" ref="dd/d73/classqml_cpu_info_item.html" />
+      <keyword name="qmlCpuInfoItem" id="qmlCpuInfoItem::qmlCpuInfoItem" ref="dd/d73/classqml_cpu_info_item.html" />
+      <keyword name="type" id="qmlCpuInfoItem::type" ref="dd/d73/classqml_cpu_info_item.html" />
+      <keyword name="textColor" id="qmlCpuInfoItem::textColor" ref="dd/d73/classqml_cpu_info_item.html" />
+      <keyword name="type" id="qmlCpuInfoItem::type" ref="dd/d73/classqml_cpu_info_item.html" />
+      <keyword name="textColor" id="qmlCpuInfoItem::textColor" ref="dd/d73/classqml_cpu_info_item.html" />
+      <keyword name="qmlCpuInfoModelContainer" id="qmlCpuInfoModelContainer" ref="d3/d18/classqml_cpu_info_model_container.html" />
+      <keyword name="setCpuInfo" id="qmlCpuInfoModelContainer::setCpuInfo" ref="d3/d18/classqml_cpu_info_model_container.html" />
+      <keyword name="setModel" id="qmlCpuInfoModelContainer::setModel" ref="d3/d18/classqml_cpu_info_model_container.html" />
+      <keyword name="setProcessorId" id="qmlCpuInfoModelContainer::setProcessorId" ref="d3/d18/classqml_cpu_info_model_container.html" />
+      <keyword name="cpuInfoChanged" id="qmlCpuInfoModelContainer::cpuInfoChanged" ref="d3/d18/classqml_cpu_info_model_container.html" />
+      <keyword name="modelChanged" id="qmlCpuInfoModelContainer::modelChanged" ref="d3/d18/classqml_cpu_info_model_container.html" />
+      <keyword name="cpuCoreIdChanged" id="qmlCpuInfoModelContainer::cpuCoreIdChanged" ref="d3/d18/classqml_cpu_info_model_container.html" />
+      <keyword name="qmlCpuInfoModelContainer" id="qmlCpuInfoModelContainer::qmlCpuInfoModelContainer" ref="d3/d18/classqml_cpu_info_model_container.html" />
+      <keyword name="cpuInfo" id="qmlCpuInfoModelContainer::cpuInfo" ref="d3/d18/classqml_cpu_info_model_container.html" />
+      <keyword name="model" id="qmlCpuInfoModelContainer::model" ref="d3/d18/classqml_cpu_info_model_container.html" />
+      <keyword name="componentComplete" id="qmlCpuInfoModelContainer::componentComplete" ref="d3/d18/classqml_cpu_info_model_container.html" />
+      <keyword name="processorId" id="qmlCpuInfoModelContainer::processorId" ref="d3/d18/classqml_cpu_info_model_container.html" />
+      <keyword name="cpuInfo" id="qmlCpuInfoModelContainer::cpuInfo" ref="d3/d18/classqml_cpu_info_model_container.html" />
+      <keyword name="model" id="qmlCpuInfoModelContainer::model" ref="d3/d18/classqml_cpu_info_model_container.html" />
+      <keyword name="processorId" id="qmlCpuInfoModelContainer::processorId" ref="d3/d18/classqml_cpu_info_model_container.html" />
+    </keywords>
+    <files>
+      <file>tab_r.gif</file>
+      <file>tab_l.gif</file>
+      <file>tab_b.gif</file>
+      <file>tabs.css</file>
+      <file>doxygen.png</file>
+      <file>doxygen.css</file>
+      <file>search/close.png</file>
+      <file>search/search.png</file>
+      <file>search/search.css</file>
+      <file>search/search.js</file>
+      <file>index.html</file>
+      <file>pages.html</file>
+      <file>d3/d1b/d_1_2_t_e_m_p_2test_2challenge_2cpuinfomodel.h-example.html</file>
+      <file>df/daa/cpp.html</file>
+      <file>d3/da9/qml.html</file>
+      <file>annotated.html</file>
+      <file>classes.html</file>
+      <file>hierarchy.html</file>
+      <file>functions.html</file>
+      <file>functions_func.html</file>
+      <file>functions_enum.html</file>
+      <file>functions_eval.html</file>
+      <file>functions_prop.html</file>
+      <file>d1/d7f/classcpu_info_base.html</file>
+      <file>d1/d7f/classcpu_info_base.png</file>
+      <file>dc/d6f/classcpu_info_base-members.html</file>
+      <file>d0/d84/classcpu_info_model.html</file>
+      <file>d0/d3c/classcpu_info_model-members.html</file>
+      <file>df/dbb/classcpu_values.html</file>
+      <file>df/ddb/classcpu_values-members.html</file>
+      <file>d2/d1b/classlinux_cpu_info.html</file>
+      <file>d2/d1b/classlinux_cpu_info.png</file>
+      <file>d1/d0d/classlinux_cpu_info-members.html</file>
+      <file>d7/dd0/classlogfile.html</file>
+      <file>d2/d46/classlogfile-members.html</file>
+      <file>da/db0/classmy_namespace.html</file>
+      <file>d4/d40/classmy_namespace-members.html</file>
+      <file>dd/d73/classqml_cpu_info_item.html</file>
+      <file>d9/d8b/classqml_cpu_info_item-members.html</file>
+      <file>d3/d18/classqml_cpu_info_model_container.html</file>
+      <file>d2/dc4/classqml_cpu_info_model_container-members.html</file>
+      <file>examples.html</file>
+    </files>
+  </filterSection>
+</QtHelpProject>
