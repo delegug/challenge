@@ -3,6 +3,9 @@
 
 #include <QtCore>
 
+/// @class myNamespace
+/// @brief Namespace-Class includes the ENUMS of the project for QML/C++ access
+/// Is declared as QGadget-Class, to acces the enums in qml
 class myNamespace
 {
     Q_GADGET

@@ -1,4 +1,4 @@
-/// @class cpuinfobase.cpp
+/// @file cpuinfobase.cpp
 /// @brief Base Class for the cpu information
 /// @author M. Gugenhan
 

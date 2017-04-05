@@ -38,6 +38,24 @@ private:
 /// @brief List-Model for the presentation of the cpu data for each processor
 /// the data for the model has to be set with the property cpuInfo
 /// the internal list of qmlCpuInfoItems decides which rows will be shown
+/// @example
+///
+/// MyCpuInfoModel {
+///     id: infoModel
+///     cpuInfo: _myCpuInfo
+///     MyCpuInfoModelItem {
+///         type: MyNamespace.PROCESSOR
+///     }
+///     MyCpuInfoModelItem {
+///         type: MyNamespace.VENDOR_ID
+///     }
+///     MyCpuInfoModelItem {
+///         type: MyNamespace.CPU_FAMILY
+///     }
+///     MyCpuInfoModelItem {
+///         type: MyNamespace.MODEL
+///     }
+
 class cpuInfoModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -74,7 +92,7 @@ private:
 
 
 
-/// @class qmlCpuInfoModel
+/// @class qmlCpuInfoModelContainer
 /// @brief QML-Representation of the CpuInfoModel
 /// Is a Qml-Container-Class which contains the qmlCpuInfoItem as Qml-Childs
 /// the qmlCpuInfoItem presents a row in the tableview
