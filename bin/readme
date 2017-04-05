@@ -10,3 +10,12 @@ Supported Languages are German and English. The program language will be the sys
 Execution:
 
 Execute the 'challenge'-file in this folder. Be sure that the qt-5.8.0-GCC_64 library is installed on the system. The program searches the QT-Library-Files in /usr/lib/x86_64-linux-gnu/.
+
+Alternative:
+Make the challenge.sh-file in the terminal executable with 
+
+'chmod +x challenge.sh'
+
+and execute
+
+'./challenge.sh'
